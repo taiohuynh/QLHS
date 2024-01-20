@@ -1,0 +1,43 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Tiếp nhận{% endblock %}
+
+{% block content %}
+<form method="post" action="">
+    <h3 style="margin-top: 30px">TIẾP NHẬN HỌC SINH</h3>
+    <div class="mb-3 mt-3">
+        <label for="lastname">Họ</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Nhập họ ..." required>
+    </div>
+     <div class="mb-3 mt-3">
+        <label for="firstname">Tên </label>
+        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nhập tên ..." required>
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="sex">Giới tính </label>
+        <input type="text" class="form-control" id="sex" name="sex" placeholder="Nhập giới tính ..." >
+    </div>
+    <div class="mt-3 mb-3">
+        <label for="birth">Ngày sinh</label>
+        <input type="date" class="form-control" id="birth" name="birth" placeholder="Nhập ngày sinh ..." required>
+    </div>
+    <div class="mt-3 mb-3">
+        <label for="address">Địa chỉ</label>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ ..." >
+    </div>
+    <div class="mt-3 mb-3">
+        <label for="phone">Số điện thoại</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại ..." >
+    </div>
+    <div class="mt-3 mb-3">
+        <label for="mail">Email</label>
+        <input type="text" class="form-control" id="mail" name="mail" placeholder="Nhập địa chỉ email ..." >
+    </div>
+    {% if err_msg %}
+    <div class="alert alert-danger" role="alert">{{ err_msg }}</div>
+    {% endif %}
+    <div class="form-floating mt-3 mb-3">
+        <button type="submit" class="btn btn-danger">Lưu thông tin</button>
+    </div>
+</form>
+{% endblock %}

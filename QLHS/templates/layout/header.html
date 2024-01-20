@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">QUẢN LÝ HỌC SINH</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Trang chủ</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/addpupil">Tiếp nhận học sinh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/search">Tra cứu thông tin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/classlist">Lập danh sách lớp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/inputgradetable">Nhập bảng điểm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/outputgradetable">Xuất bảng điểm</a>
+                </li>
+            </ul>
+        </div>
+        <li>
+            <li class="nav-item">
+                <a class="nav-item text-info" href="/">
+                    <img src="{{current_user.avatar}}" style="width:25px" class="rounded"/> Chào
+                    {{current_user.username}}!
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item text-danger" href="/logout">Đăng xuất</a>
+            </li>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link text-info" href="/login">Đăng nhập</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-info" href="/register">Đăng ký</a>
+        </li>
+        {% endif %}
+        </ul>
+    </div>
+    </div>
+</nav>
+{% block body %}
+
+{% endblock %}

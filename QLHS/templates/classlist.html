@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% if current_user.user_role.name == 'NHANVIEN' %}
+<div class="container mt-3">
+    <h2 style="margin-top: 30px">THÊM HỌC SINH VÀO LỚP</h2>
+    <form method="post" enctype="multipart/form-data" action="/classlist">
+    <input class="form-control me-2" name="mahs" type="text"
+           style="margin-bottom: 20px" id="mahs" placeholder="Nhập mã học sinh...">
+    <input class="form-control me-2" name="lop" type="text"
+           style="margin-bottom: 20px" id="lop" placeholder="Nhập lớp muốn thêm...">
+    {% if err_msg %}
+    <div class="alert alert-danger" role="alert">{{ err_msg }}</div>
+    {% endif %}
+    <div class="form-floating mt-3 mb-3">
+        <button type="submit" class="btn btn-danger">Thêm học sinh</button>
+    </div>
+    <table class="table table-bordered" style="margin-top: 15px; margin-bottom: 250px">
+        <thead>
+        <tr>
+            <th>Stt</th>
+            <th>Họ Tên</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for b in hocsinh %}
+        <tr>
+            <td>{{b.id}}</td>
+            <td>{{b.HoTen}}</td>
+            <td>{{b.GioiTinh}}</td>
+            <td>{{b.NamSinh}}</td>
+            <td>{{b.DiaChi}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+{% endblock %}

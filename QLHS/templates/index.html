@@ -1,0 +1,37 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Trang chủ{% endblock %}
+
+{% block content %}
+<section class="container">
+    {% if current_user.is_authenticated %}
+    <h2 class="text-center" style="margin-top: 30px">Chào mừng đến với hệ thống QUẢN LÝ HỌC SINH</h2>
+    <div class="col-xs-12 col-md-3" style="padding: 5px;">
+        <div class="image-container" style="display: flex; margin-bottom: 30px; margin-top: 30px; margin-left: 100px">
+            <div>
+                <p><img src="https://res.cloudinary.com/dkjkoupgw/image/upload/v1705647479/tmciffq4przadmsqe7pa.png"
+                          alt="Tiếp nhận học sinh" width="256px" height="256px"></p>
+            </div>
+            <div>
+                <p> <img src="https://res.cloudinary.com/dkjkoupgw/image/upload/v1705646533/ozbduvgpltwrlr7sq379.png"
+                         alt="Tra cứu thông tin" width="256px" height="256px"></p>
+            </div>
+            <div>
+                <p> <img src="https://res.cloudinary.com/dkjkoupgw/image/upload/v1705646894/ee08wejpnygekkychptz.png"
+                         alt="Danh sách lớp" width="256px" height="256px"></p>
+            </div>
+            <div>
+                <p> <img src="https://res.cloudinary.com/dkjkoupgw/image/upload/v1705647154/lly2gxkoiqtceeltosxh.png"
+                         alt="Xuất nhập điểm" width="256px" height="256px"></p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+
+
+
+
